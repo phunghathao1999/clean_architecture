@@ -1,0 +1,51 @@
+﻿@page
+@model RazorSample.Pages.Cinema.ContactModel
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="/Client/img/page-top-bg/4.jpg">
+    <div class="page-info">
+        <h2>Liên hệ</h2>
+        <div class="site-breadcrumb">
+            <a href="">Trang chủ</a>
+            <span>Liên hệ</span>
+        </div>
+    </div>
+</section>
+<!-- Page top end-->
+<!-- Contact page -->
+<section class="contact-page">
+    <div class="container">
+        <div class="map"><iframe src="" style="border:0" allowfullscreen></iframe></div>
+        <div class="row">
+            <div class="col-lg-7 order-2 order-lg-1">
+                <form class="contact-form">
+                    <input type="text" placeholder="Tên của bạn">
+                    <input type="text" placeholder="E-mail của bạn">
+                    <textarea placeholder="Tin nhắn"></textarea>
+                    <button class="site-btn">Gởi<img src="/Client/img/icons/double-arrow.png" alt="#" /></button>
+                </form>
+            </div>
+            <div class="col-lg-5 order-1 order-lg-2 contact-text text-white">
+                <h3>Howdy! Say hello</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.....</p>
+                <div class="cont-info">
+                    <div class="ci-icon"><img src="/Client/img/icons/location.png" alt=""></div>
+                    <div class="ci-text">Main Str, no 23, New York</div>
+                </div>
+                <div class="cont-info">
+                    <div class="ci-icon"><img src="/Client/img/icons/phone.png" alt=""></div>
+                    <div class="ci-text">+546 990221 123</div>
+                </div>
+                <div class="cont-info">
+                    <div class="ci-icon"><img src="/Client/img/icons/mail.png" alt=""></div>
+                    <div class="ci-text">hosting@contact.com</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact page end-->

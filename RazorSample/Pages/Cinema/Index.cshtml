@@ -1,0 +1,99 @@
+﻿@page 
+@model RazorSample.Pages.Cinema.IndexModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- Blog section -->
+<section class="blog-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-7">
+                <h2 class="section-title ">Phim mới công chiếu</h2>
+                <!-- Blog item -->
+               @foreach (var i in Model.Movies)
+                {
+                    <div class="blog-item" style="clear:both;padding-top:20px;">
+                        <div class="blog-thumb">
+                            <img src="@Html.DisplayFor(model => i.img1)" alt="">
+                        </div>
+                        <div class="blog-text text-box text-white">
+                            <h3>@Html.DisplayFor(model => i.Title)</h3>
+                            <p>
+                                @Html.DisplayFor(model => i.Description)
+                            </p>
+                            <a href="@Html.DisplayFor(model => i.trailer)" class="read-more video-popup">
+                                Trailer
+                                <img src="~/Client/img/icons/double-arrow.png" alt="#" />
+                            </a><br /><br />
+                            <a asp-page="Movie_detail" asp-route-id="@Html.DisplayFor(model => i.MovieId)" class="read-more">
+                                Chi tiết
+                                <img src="~/Client/img/icons/double-arrow.png" alt="#" />
+                            </a>
+                        </div>
+                    </div>
+                }
+                <!-- End blog item -->
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-5 sidebar">
+                @*<div class="widget-item">
+                    <form class="search-widget">
+                        <input type="text" name="searchstring" asp-for="SearchString" />
+                        <button>search</button>
+                    </form>
+                </div>*@
+                <div id="stickySidebar">
+                    <div class="widget-item">
+                        <h4 class="widget-title">Trailer phim mới</h4>
+                        <div class="trending-widget">
+                           @foreach (var a in Model.Movie_trailer)
+                            {
+                            <div class="trending-widget">
+                                <div class="tw-item" style="clear:both; padding-top:8px;">
+                                    <div class="tw-thumb" style="height:65px;width:65px;">
+                                        <img src="@Html.DisplayFor(model => a.img1)">
+                                    </div>
+                                    <div class="tw-text">
+                                        <a asp-page="Movie_detail" asp-route-id="@Html.DisplayFor(model => a.MovieId)">
+                                            <h5>@Html.DisplayFor(model => a.Title)</h5>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Blog section end -->
+<!-- Intro section -->
+<section class="intro-video-section set-bg d-flex align-items-end " data-setbg="./Client/img/promo-bg.jpg">
+    <a href="https://www.youtube.com/watch?v=TcMBFSGVi1c" class="video-play-btn video-popup">
+        <img src="/Client/img/icons/solid-right-arrow.png" alt="#">
+    </a>
+    <div class="container">
+        <div class="video-text">
+            <h2>Endgame - Official Trailer</h2>
+            <p>Đặt vé xem phim mới nhất ngay tại rạp</p>
+            <a href="#" class="read-more">Chi tiết  <img src="~/Client/img/icons/double-arrow.png" alt="#" /></a>
+        </div>
+    </div>
+</section>
+<!-- Intro section end -->
+<!-- Featured section -->
+<section class="featured-section">
+    <div class="featured-bg set-bg" data-setbg="/Client/img/featured-bg.jpg"></div>
+    <div class="featured-box">
+        <div class="text-box">
+            <h3></h3>
+            <p>
+
+            </p>
+        </div>
+    </div>
+</section>
+<!-- Featured section end-->

@@ -1,0 +1,10 @@
+C:\Users\Admin\Desktop\Cinema\Model\bin\Debug\netcoreapp3.0\Model.deps.json
+C:\Users\Admin\Desktop\Cinema\Model\bin\Debug\netcoreapp3.0\Model.runtimeconfig.json
+C:\Users\Admin\Desktop\Cinema\Model\bin\Debug\netcoreapp3.0\Model.runtimeconfig.dev.json
+C:\Users\Admin\Desktop\Cinema\Model\bin\Debug\netcoreapp3.0\Model.dll
+C:\Users\Admin\Desktop\Cinema\Model\bin\Debug\netcoreapp3.0\Model.pdb
+C:\Users\Admin\Desktop\Cinema\Model\obj\Debug\netcoreapp3.0\Model.csprojAssemblyReference.cache
+C:\Users\Admin\Desktop\Cinema\Model\obj\Debug\netcoreapp3.0\Model.AssemblyInfoInputs.cache
+C:\Users\Admin\Desktop\Cinema\Model\obj\Debug\netcoreapp3.0\Model.AssemblyInfo.cs
+C:\Users\Admin\Desktop\Cinema\Model\obj\Debug\netcoreapp3.0\Model.dll
+C:\Users\Admin\Desktop\Cinema\Model\obj\Debug\netcoreapp3.0\Model.pdb

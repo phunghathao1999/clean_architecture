@@ -1,0 +1,104 @@
+﻿@page
+@model RazorSample.Pages.Cinema.Movies_in_weekModel
+@{
+    ViewData["Title"] = "Movies_in_week";
+    Layout = "~/Pages/Shared/_Layout.cshtml";
+}
+
+<!-- Page top section -->
+<section class="page-top-section set-bg" data-setbg="/Client/img/page-top-bg/1.jpg">
+    <div class="page-info">
+        <h2>Phim</h2>
+        <div class="site-breadcrumb">
+            <a asp-area="" asp-controller="Home" asp-action="Index">Trang chủ</a> /
+            <span>Phim</span>
+        </div>
+    </div>
+</section>
+<!-- Page top end-->
+<!-- Games section -->
+<section class="games-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-9 col-lg-8 col-md-7">
+                <ul class="blog-filter" style="padding-bottom: 20px;">
+                    <li><a asp-page="Movies_playing">Đang chiếu</a></li>
+                    <li><a asp-page="Movies_upcoming">Sắp chiếu</a></li>
+                </ul>
+                <div class="row">
+                    <div class="col">
+                        <div class="row">
+                            @foreach (var i in Model.Movies)
+                            {
+                                <div class="col-lg-3 col-md-6">
+                                    <div class="game-item">
+                                        <img src="@Html.DisplayFor(model => i.img1)" alt="#">
+                                        <h5>@Html.DisplayFor(model => i.Title)</h5>
+                                        <a href="@Html.DisplayFor(model => i.trailer)" class="video-play video-popup read-more">
+                                            Trailer<img src="/Client/img/icons/double-arrow.png" alt="#" />
+                                        </a><br />
+                                        <a asp-page="Movie_detail" asp-route-id="@Html.DisplayFor(model => i.MovieId)" class="read-more">
+                                            Chi tiết<img src="/Client/img/icons/double-arrow.png" alt="#" />
+                                        </a>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                        @{
+                            var preDisabled = !Model.Movies.HasPrevious ? "disabled" : "";
+                            var nextDisabled = !Model.Movies.HasNext ? "disabled" : "";
+                        }
+                        <div class="site-pagination">
+                            @*<a href="#" class="active">01.</a>
+                                <a href="#">02.</a>
+                                <a href="#">03.</a>*@
+                            <a asp-page="Movies_playing"
+                               asp-route-pageIndex="@(Model.Movies.PageIndex - 1)"
+                               class="btn btn-default @preDisabled">Trước   </a>
+
+                            <a asp-page="Movies_playing"
+                               asp-route-pageIndex="@(Model.Movies.PageIndex + 1)"
+                               class="btn btn-default @nextDisabled">   Sau</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-3 col-lg-4 col-md-5 sidebar">
+                <div class="widget-item">
+                    <form class="search-widget">
+                        <input type="text" name="searchstring" asp-for="SearchString" />
+                        <button>search</button>
+                    </form>
+                </div>
+                <div id="stickySidebar">
+                    <div class="widget-item">
+                        <h4 class="widget-title">Trailer phim mới</h4>
+                        <div class="trending-widget">
+                           @foreach (var a in Model.Movie_trailer)
+                            {
+                                <div class="trending-widget">
+                                    <div class="tw-item" style="clear:both; padding-top:8px;">
+                                        <div class="tw-thumb" style="height:65px;width:65px;">
+                                            <img src="@Html.DisplayFor(model => a.img1)">
+                                        </div>
+                                        <div class="tw-text">
+                                            <a asp-page="Movie_detail" asp-route-id="@Html.DisplayFor(model => a.MovieId)">
+                                                <h5>@Html.DisplayFor(model => a.Title)</h5>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                    <div class="widget-item">
+                        <a href="#" class="add">
+                            <img src="./Client/img/add.jpg" alt="">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Games end-->
